@@ -1,0 +1,30 @@
+# IntelliJ / JetBrains
+**/.idea/
+**/*.iml
+
+# NetBeans
+**/build/
+**/dist/
+**/nbbuild/
+**/nbdist/
+**/.nb-gradle/
+**/manifest.mf
+**/build.xml
+**/nbproject/
+
+# NetBeans build classes
+**/build/classes/
+**/build/classes/**/*.class
+**/build/classes/**/.netbeans_automatic_build
+**/build/classes/**/.netbeans_update_resources
+
+# OS & editor
+.DS_Store
+.vscode/
+
+# Java compiled files
+*.class
+*.jar
+*.war
+*.ear
+*.log
