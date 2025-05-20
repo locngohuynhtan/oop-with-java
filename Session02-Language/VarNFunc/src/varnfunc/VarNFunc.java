@@ -1,12 +1,26 @@
 package varnfunc;
 
+import java.util.Scanner;
+
 public class VarNFunc {
 
     public static void main(String[] args) {
         //playWithVariables();
         //playWithIntegers();
         //playWithDoubles();
-        playWithCharacters();
+        //playWithCharacters();
+        //playWithBooleans();
+        //printIntegerList();
+        //printIntegerList(1000); // hard-code, code cứng giá trị.
+        //inputFromKeyboard();
+        
+        int x = getAnInteger();
+        System.out.println("x from keyboard: " + x);
+        
+        // In từ 1 -> x
+        printIntegerList(x); // pass by value, truyền tham trị, lấy value có trong x thảy xuống hàm gốc ở dưới.
+        
+        testMathFunctions();
     }
     
     // static chỉ chơi với static
@@ -73,6 +87,69 @@ public class VarNFunc {
         
         System.out.println("1st letter in my name: " + name.charAt(0));
         System.out.println("my name as in a lowercase: " + name.toLowerCase());
+    }
+    
+    // Một biểu thức so sánh, một mệnh đề, câu phát biểu sẽ rơi vào 2 trạng thái: đúng - sai.
+    // C Programming: đúng thì quy ước là 1 (> 0), sai quy ước là 0 => int.
+    // Java Programming: đúng là true, sai là false => boolean.
+    public static void playWithBooleans() {
+        boolean marriedStatus = false;
+        if (marriedStatus == true) {
+            System.out.println("Đánh đồn có dịch mới vui.");
+        } else {
+            System.out.println("Vườn hồng có lối nhưng chưa ai vào.");
+            System.out.println("Luôn có hy vọng.");
+        }
+
+    }
+    
+    // In ra các số nguyên từ 1 -> 100
+    public static void printIntegerList() {
+        System.out.println("The list of 100 first integers: ");
+        System.out.println("1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23...");
+        for (int i = 1; i <= 100; i++) {
+            System.out.print(i + " ");
+        }
+        System.out.println("");
+    }
+    
+    // CÁC LOẠI HÀM KHÁC
+    // In các số tự nhiên từ 1 -> n
+    // HIỆN TƯỢNG TRONG 1 CLASS BẤT KÌ MÀ CÓ 2 HÀM TRÙNG TÊN NHAU NHƯNG KHÁC PHẦN THAM SỐ ĐẦU VÀO,
+    // KHÁC TRÊN DATA TYPE, KHÔNG QUAN TÂM TÊN BIẾN, HIỆN TƯỢNG NÀY ĐƯỢC GỌI LÀ OVERLOAD/OVERLOADING,
+    // QUÁ TẢI HÀM - 1 đám giống nhau ở cùng 1 chỗ - quá tải.
+    public static void printIntegerList(int n) {
+        System.out.println("The list of " + n + " first integers: ");
+        for (int i = 1; i <= n; i++) {
+            System.out.print(i + " ");
+        }
+        System.out.println("");
+    }
+    
+    public static void inputFromKeyboard() {
+        int yob; // C Programming gán rác - on-off hiện nay của RAM.
+        
+        Scanner banPhimCuaTui = new Scanner(System.in);
+        System.out.print("Please input your year of birth: ");
+        yob = banPhimCuaTui.nextInt();
+        
+        System.out.println("yob: " + yob);
+    }
+    
+    public static int getAnInteger() {
+        int n;
+        
+        Scanner banPhimCuaTui = new Scanner(System.in);
+        System.out.print("Please input a positive integer: ");
+        n = banPhimCuaTui.nextInt();
+        
+        return n;
+    }
+    
+    public static void testMathFunctions() {
+        double result = Math.sqrt(100);
+        System.out.println("result: " + result);
+        System.out.println(Math.sqrt(121));
     }
     
 }
